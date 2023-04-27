@@ -5,7 +5,7 @@
   "main": "src/server/server.js",
   "scripts": {
     "test": "test reached",
-    "build-dev": "node src/server/server.js",
+    "build-dev": "cross-env NODE_ENV=development node src/server/server.js",
     "build-prod": "cross-env NODE_ENV=production node index.js"
   },
   "author": "Dylan Jaipersaud",
@@ -13,13 +13,19 @@
   "dependencies": {
     "express": "^4.18.2",
     "html-webpack-plugin": "^5.5.1",
+    "lodash": "^4.17.21",
     "socket.io": "^4.6.1",
     "socket.io-client": "^4.6.1",
     "webpack": "^5.79.0",
     "webpack-dev-middleware": "^6.0.2"
   },
   "devDependencies": {
+    "@babel/core": "^7.21.4",
+    "@babel/preset-env": "^7.21.4",
+    "babel-loader": "^9.1.2",
+    "cross-env": "^7.0.3",
     "mini-css-extract-plugin": "^2.7.5",
+    "webpack-cli": "^5.0.2",
     "webpack-merge": "^5.8.0"
   }
 }
