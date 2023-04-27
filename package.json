@@ -2,17 +2,20 @@
   "name": "hopperio",
   "version": "1.0.0",
   "description": "Hopper.io is a multiplayer browser game",
-  "main": "index.js",
+  "main": "src/server/server.js",
   "scripts": {
     "test": "test reached",
-    "development": "node index.js",
-    "production": "cross-env NODE_ENV=production node index.js"
+    "build-dev": "node src/server/server.js",
+    "build-prod": "cross-env NODE_ENV=production node index.js"
   },
   "author": "Dylan Jaipersaud",
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.2",
+    "html-webpack-plugin": "^5.5.1",
     "socket.io": "^4.6.1",
-    "webpack": "^5.79.0"
+    "socket.io-client": "^4.6.1",
+    "webpack": "^5.79.0",
+    "webpack-dev-middleware": "^6.0.2"
   }
 }
