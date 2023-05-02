@@ -18,6 +18,6 @@ function downloadAsset(assetName){
     });
 }
 
-export const downloadAsset = () => downloadPromise;
+export const downloadAssets = () => downloadPromise;
 
 export const getAsset = assetName => assets[assetName];

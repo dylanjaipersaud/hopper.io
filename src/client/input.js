@@ -1,3 +1,3 @@
 import { updateDirection } from "./networking";
 
-function 
+// function 
