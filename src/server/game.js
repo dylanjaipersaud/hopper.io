@@ -32,7 +32,7 @@ class Game{
     }
 
     update(){
-        // Calulate the time that has passed
+        // Calculate the time that has passed
         const now = Date.now();
         const dt = (now - this.lastUpdateTime) / 1000;
         this.lastUpdateTime = now;

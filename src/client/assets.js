@@ -1,5 +1,5 @@
 const ASSET_NAMES = [
-    'frog idle 1.png'
+    'frog_idle_1.png'
 ];
 
 const assets = {};

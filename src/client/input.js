@@ -1,3 +1,5 @@
 import { updateDirection } from "./networking";
 
-// function 
+function onKeyboardInput(e){
+    handleInput(e.clientX, e.clientY);
+}
