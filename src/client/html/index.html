@@ -2,14 +2,54 @@
 <html>
 <head>
   <title>Hopper.io</title>
-  <link type="text/css" rel="stylesheet" href="/game.bundle.css">
+  <!-- <link type="text/css" rel="stylesheet" href="/game.bundle.css"> -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-58664433-3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-58664433-3');
+  </script>
 </head>
-<body style="background-color: blue;">
+<body class="main-body">
   <canvas id="game-canvas"></canvas>
-  <script async src="/game.bundle.js"></script>
   <div id="play-menu" class="hidden">
+    <h1>Hopper.io</h1>
+    <p>
+      Move around and hop on other players
+      <br />
+      Use WASD to move
+    </p>
+    <hr />
+    <p>
+      See the source code on <a href="https://github.com/vzhou842/example-.io-game" target="_blank">Github</a>.
+      <br />
+      Created by Dylan Jaipersaud</a>.
+    </p>
+    <hr />
     <input type="text" id="username-input" placeholder="Username" />
     <button id="play-button">PLAY</button>
+  </div>
+  <div id="leaderboard" class="hidden">
+    <table>
+      <tr>
+        <th>Username</th>
+        <th>Score</th>
+      </tr>
+      <tr><td></td><td></td></tr>
+      <tr><td></td><td></td></tr>
+      <tr><td></td><td></td></tr>
+      <tr><td></td><td></td></tr>
+      <tr><td></td><td></td></tr>
+    </table>
+  </div>
+  <div id="disconnect-modal" class="hidden">
+    <div>
+      <h2>Disconnected from Server </h2>
+      <hr />
+      <button id="reconnect-button">RECONNECT</button>
+    </div>
   </div>
 </body>
 </html>

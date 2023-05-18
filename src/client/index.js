@@ -6,6 +6,8 @@ import { initState } from './state';
 import { setLeaderboardHidden } from './leaderboard';
 
 // Import CSS for design
+// import './css/bootstrap-reboot.css';
+import './css/main.css'
 
 // Player buttons
 const playMenu = document.getElementById('play-menu');
@@ -19,9 +21,11 @@ Promise.all([
   // Gather assets ahead of render
   downloadAssets(),
 ]).then(() => {
-  // Once the player has connected, then place them in the game
+  // Once the player has connected, allow them to choose a name
   playMenu.classList.remove('hidden');
   usernameInput.focus();
+  
+  // Once the player has chosen a name, place them in the game
   playButton.onclick = () => {
     play(usernameInput.value);
     playMenu.classList.add('hidden');

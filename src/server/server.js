@@ -12,11 +12,22 @@ const app = express();
 app.use(express.static('public'));
 
 // Setup Webpack for development
-const compiler = webpack(webpackConfig);
-app.use(webpackDevMiddleware(compiler));
+// const compiler = webpack(webpackConfig);
+// app.use(webpackDevMiddleware(compiler));
+if (process.env.NODE_ENV === 'development') {
+    // Setup Webpack for development
+    const compiler = webpack(webpackConfig);
+    app.use(webpackDevMiddleware(compiler));
+  } else {
+    // Static serve the dist/ folder in production
+    app.use(express.static('dist'));
+  }
 
 // Server begins listening on port 4444
-const server = app.listen(4444);
+const server = app.listen(4444, function(){
+    console.log('Server running on port 4444');
+});
+// const server = app.listen(4444);
 
 // Create socket.io server and attach it to the Express server
 const io = socketio(server);

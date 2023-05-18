@@ -35,6 +35,10 @@ export const connect = onGameOver => (
         // Message callback for client disconnection
         socket.on('disconnect', () => {
             console.log("Disconnected from server")
+            document.getElementById('disconnect-modal').classList.remove('hidden');
+            document.getElementById('reconnect-button').onClick = () => {
+                window.location.reload();
+            }
         })
     })
 )

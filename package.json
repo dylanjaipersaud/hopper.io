@@ -4,8 +4,9 @@
   "description": "Hopper.io is a multiplayer browser game",
   "main": "src/server/server.js",
   "scripts": {
+    "build": "webpack --config webpack.prod.js",
     "test": "test reached",
-    "build-dev": "node src/server/server.js",
+    "build-dev": "cross-env NODE_ENV=development node src/server/server.js",
     "build-prod": "cross-env NODE_ENV=production node index.js"
   },
   "author": "Dylan Jaipersaud",
@@ -25,6 +26,7 @@
     "@babel/preset-env": "^7.21.4",
     "babel-loader": "^9.1.2",
     "cross-env": "^7.0.3",
+    "css-loader": "^6.7.3",
     "mini-css-extract-plugin": "^2.7.5",
     "webpack-cli": "^5.0.2",
     "webpack-merge": "^5.8.0"
