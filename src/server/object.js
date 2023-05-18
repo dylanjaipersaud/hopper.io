@@ -8,10 +8,10 @@ class Object{
     }
 
     update(dt){
-        // this.x += dt * this.speed * Math.sin(this.direction);
-        // this.y -= dt * this.speed * Math.cos(this.direction);
-        this.updateX(dt);
-        this.upd
+        this.x += dt * this.speed * Math.sin(this.direction);
+        this.y -= dt * this.speed * Math.cos(this.direction);
+        // this.updateX(dt);
+        // this.updateY(dt);
     }
 
     updateX(x){
