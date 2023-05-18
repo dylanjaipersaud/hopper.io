@@ -35,7 +35,7 @@ function render(){
 
 
         renderPlayer(me, me);
-        onPlayerMovement();
+        // onPlayerMovement();
         others.forEach(renderPlayer.bind(null, me));
     }
 
@@ -66,7 +66,6 @@ function renderPlayer(me, player){
 
     ctx.save();
     ctx.translate(canvasX, canvasY);
-    // ctx.rotate(-direction);
     ctx.drawImage(
       getAsset('frog_idle_1.png'),
       -PLAYER_RADIUS,
@@ -93,11 +92,11 @@ function renderPlayer(me, player){
   );
 }
 
-function onPlayerMovement(){
-  if(up){
-    console.log("Rendering UP");
-  }
-}
+// function onPlayerMovement(){
+//   if(up){
+//     console.log("Rendering UP");
+//   }
+// }
 
 function renderMainMenu() {
     const t = Date.now() / 7500;

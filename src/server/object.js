@@ -8,8 +8,18 @@ class Object{
     }
 
     update(dt){
-        this.x += dt * this.speed * Math.sin(this.direction);
-        this.y -= dt * this.speed * Math.cos(this.direction);
+        // this.x += dt * this.speed * Math.sin(this.direction);
+        // this.y -= dt * this.speed * Math.cos(this.direction);
+        this.updateX(dt);
+        this.upd
+    }
+
+    updateX(x){
+      this.x += x;
+    }
+
+    updateY(y){
+      this.y += y;
     }
 
     distanceTo(object) {

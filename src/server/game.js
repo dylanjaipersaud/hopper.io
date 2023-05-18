@@ -1,5 +1,6 @@
 const Constants = require('../shared/constants.js');
 const Player = require('./player.js');
+const applyCollisions = require('./collisions');
 
 class Game {
     constructor() {
@@ -27,9 +28,17 @@ class Game {
         delete this.players[socket.id];
     }
 
-    handleInput(socket, dir) {
+    handleInputX(socket, dirX) {
         if (this.players[socket.id]) {
-            this.players[socket.id].setDirection(dir);
+            console.log("reached game");
+            this.players[socket.id].updateX(dirX);
+        }
+    }
+
+    handleInputY(socket, dirY) {
+        if (this.players[socket.id]) {
+            console.log("reached game");
+            this.players[socket.id].updateY(dirY);
         }
     }
 
@@ -42,11 +51,15 @@ class Game {
         // Update each player
         Object.keys(this.sockets).forEach(playerID => {
             const player = this.players[playerID];
-            // const newBullet = player.update(dt);
-            // if (newBullet) {
-            //   this.bullets.push(newBullet);
-            // }
+            player.update(dt);
+
+            // Apply collisions, give players score for hitting other players
+            if (applyCollisions(this.players[playerID], Object.values(this.players))) {
+                this.players[socket.id].onDealtDamage();
+            }
         });
+
+
 
         // Check if any players are dead 
         Object.keys(this.sockets).forEach(playerID => {

@@ -49,6 +49,10 @@ export const play = username => {
 }
 
 // 
-export const updateDirection = throttle(20, dir => {
-    socket.emit(Constants.MSG_TYPES.INPUT, dir);
+export const updateDirectionX = throttle(20, dirX => {
+    socket.emit(Constants.MSG_TYPES.INPUT_X, dirX);
+})
+
+export const updateDirectionY = throttle(20, dirY => {
+    socket.emit(Constants.MSG_TYPES.INPUT_Y, dirY);
 })
